@@ -5,6 +5,7 @@ import { Loading } from '../Loading/Loading';
 
 const Home = React.lazy(() => import('home/Home'));
 const About = React.lazy(() => import('about/About'));
+const CurriculumVitae = React.lazy(() => import('curriculumvitae/CurriculumVitae'));
 
 const AnimatedShell: React.FunctionComponent = () => {
     const location = useLocation();
@@ -21,6 +22,9 @@ const AnimatedShell: React.FunctionComponent = () => {
                         </Route>
                         <Route exact path="/about">
                             <About />
+                        </Route>
+                        <Route exact path="/curriculumvitae">
+                            <CurriculumVitae />
                         </Route>
                     </Switch>
                 </React.Suspense>

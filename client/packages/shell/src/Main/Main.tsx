@@ -7,11 +7,10 @@ import { Description } from '../Description/Description';
 import { GithubMark } from '../GithubMark/GithubMark';
 
 const MainContainer = styled.div`
+    font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
     left: 0;
     right: 0;
@@ -57,27 +56,32 @@ const BackgroundContainer = styled.div<{ backgroundImage: string }>`
 const ContentContainer = styled.div`
     z-index: 1;
     display: flex;
-    justify-content: space-evenly;
-    height: 100%;
     align-items: center;
     flex-flow: column nowrap;
     width: 70%;
+    margin: auto;
 `;
 
 const MeContainer = styled.div`
-    border: 5px solid rgb(51, 66, 91);
-    border-radius: 10px;
     padding: 40px;
-    color: white;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    text-shadow: 0px 0px 60px black;
     backdrop-filter: blur(5px);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column nowrap;
-    box-shadow: 0px 0px 32px 0px black;
-    background-color: rgba(51, 66, 91, 0.7);
+    background-color: rgba(51, 66, 91, 0.2);
+    margin: auto;
+    background: rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+    margin: 1rem 0;
+    padding: 1em 1em;
+    border-radius: 0.28571429rem;
+    border-top-left-radius: 0.285714rem;
+    border-top-right-radius: 0.285714rem;
+    border-bottom-right-radius: 0.285714rem;
+    border-bottom-left-radius: 0.285714rem;
+    border: 1px solid rgba(34, 36, 38, 0.15);
 `;
 
 export const Main: React.FunctionComponent<{
@@ -87,15 +91,7 @@ export const Main: React.FunctionComponent<{
 }> = ({ showMenu, setMenuShown, backgroundImage, children }) => {
     return (
         <MainContainer>
-            <ContentContainer>
-                {!showMenu && (
-                    <MeContainer>
-                        {children}
-                        <MenuButton src={earthImage} onClick={() => setMenuShown(true)}></MenuButton>
-                        <Description>Menu</Description>
-                    </MeContainer>
-                )}
-            </ContentContainer>
+            <ContentContainer>{!showMenu && <MeContainer>{children}</MeContainer>}</ContentContainer>
             <Menu show={showMenu} onClose={() => setMenuShown(false)} />
             <BackgroundContainer backgroundImage={backgroundImage} />
             <GithubMark />

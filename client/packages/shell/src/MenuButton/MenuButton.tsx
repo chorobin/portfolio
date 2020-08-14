@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
+import earthImage from './Earth.svg';
 
 const ButtonContainer = styled.a`
     padding: 20px;
@@ -13,7 +14,7 @@ const ButtonImage = styled.img`
     background-size: cover;
     width: 100px;
     height: 100px;
-    fill: white;
+    fill: #2185d0;
     box-shadow: 0px 0px 32px 0px black;
     transition: 1s box-shadow;
 
@@ -27,12 +28,13 @@ const ButtonImage = styled.img`
     }
 `;
 
-export const MenuButton: React.FunctionComponent<{ src: string; onClick: () => void; className: string }> = ({
-    src,
+export const MenuButton: React.FunctionComponent<{ onClick: () => void; className: string }> = ({
     onClick,
     className,
 }) => (
     <ButtonContainer className={className}>
-        <ButtonImage src={src} onClick={onClick} />
+        <ButtonImage src={earthImage} onClick={onClick} />
     </ButtonContainer>
 );
+
+export { MenuButton as default };

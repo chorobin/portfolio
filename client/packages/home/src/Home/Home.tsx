@@ -3,6 +3,7 @@ import canadaImage from 'shell/Images/Canada.jpg';
 import Main from 'shell/Main';
 import Title from 'shell/Title';
 import Description from 'shell/Description';
+import MenuButton from 'shell/MenuButton';
 
 export const Home: React.FunctionComponent = () => {
     const [menuShown, setMenuShown] = React.useState(false);
@@ -12,6 +13,8 @@ export const Home: React.FunctionComponent = () => {
             <Description>
                 I'm an enthusiastic backend and frontend developer. I also love travelling and snowboarding!
             </Description>
+            <MenuButton onClick={() => setMenuShown(true)}></MenuButton>
+            <Description>Menu</Description>
         </Main>
     );
 };

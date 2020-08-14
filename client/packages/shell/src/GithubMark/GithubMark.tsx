@@ -29,7 +29,7 @@ const ButtonImage = styled.img`
 `;
 
 export const GithubMark: React.FunctionComponent = () => (
-    <ButtonContainer href="https://github.com/chorobin/portfolio">
+    <ButtonContainer href="https://github.com/chorobin/portfolio" target="_blank">
         <ButtonImage src={githubMarkImage} />
     </ButtonContainer>
 );

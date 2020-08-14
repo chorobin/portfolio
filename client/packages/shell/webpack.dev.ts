@@ -18,6 +18,7 @@ const config = merge(dev, {
             remotes: {
                 home: 'home',
                 about: 'about',
+                curriculumvitae: 'curriculumvitae',
             },
             exposes: {
                 './Shell': './src/Shell/Shell',
@@ -29,6 +30,7 @@ const config = merge(dev, {
                 './Images/Spain.jpg': './src/Images/Spain.jpg',
                 './Title': './src/Title/Title',
                 './Description': './src/Description/Description',
+                './MenuButton': './src/MenuButton/MenuButton',
             },
             shared: require('./package.json').dependencies,
         }) as any,

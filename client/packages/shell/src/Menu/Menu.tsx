@@ -55,7 +55,7 @@ export const Menu: React.FunctionComponent<{ show: boolean; onClose: () => void 
         <CloseButton onClick={onClose} />
         <MenuContent>
             <AboutMenuItem to="/about" image={vietnam1Image} text="About Me" />
-            <ResumeMenuItem to="/resume" image={vietnam5Image} text="Currivulum Vitae" />
+            <ResumeMenuItem to="/curriculumvitae" image={vietnam5Image} text="Currivulum Vitae" />
             <BlogMenuItem to="/blog" image={spainImage} text="Blog" />
             <HomeMenuItem to="/home" image={canadaImage} text="Home" />
         </MenuContent>
