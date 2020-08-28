@@ -14,6 +14,9 @@ steps:
    displayName: 'Yarn install'
    workingDirectory: client
 
+ - script: yarn global add lerna
+   displayName: 'Install lerna'
+
  - script: lerna run build-pord --scope @portfolio/shell
    displayName: 'Build Shell'
    workingDirectory: client
