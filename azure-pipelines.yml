@@ -19,6 +19,6 @@ steps:
    displayName: 'Yarn install'
    workingDirectory: client
 
- - script: yarn run lerna run build-prod --scope @portfolio/shell
+ - script: yarn run lerna run build-prod --scope $(scope)
    displayName: 'Build Shell'
    workingDirectory: client
