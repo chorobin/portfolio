@@ -10,8 +10,14 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+ - task: NodeTool@0
+ - script: yarn install
+   displayName: 'Yarn install'
+   workingDirectory: ./client
+
+ - script: lerna run build-pord --scope @portfolio/shell
+   displayName: 'Build Shell'
+   workingDirectory: ./client
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
