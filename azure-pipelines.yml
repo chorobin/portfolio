@@ -17,4 +17,4 @@ pool:
 extends:
   template: azure-pipelines-client-template.yml
   parameters:
-    scope: '@portfolio/client'
+    scope: '@portfolio/shell'
