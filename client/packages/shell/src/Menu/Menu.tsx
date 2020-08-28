@@ -1,11 +1,10 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { CloseButton } from '../CloseButton/CloseButton';
-import spainImage from '../Images/Spain.jpg';
-import vietnam5Image from '../Images/Vietnam5.jpg';
-import vietnam1Image from '../Images/Vietnam1.jpg';
-import franceImage from '../Images/France.jpg';
-import canadaImage from '../Images/Canada.jpg';
+import spain500Image from '../Images/Spain-500.jpg';
+import vietnam5500Image from '../Images/Vietnam5-500.jpg';
+import vietnam1500Image from '../Images/Vietnam1-500.jpg';
+import canada500Image from '../Images/Canada-500.jpg';
 import { MenuItem } from '../MenuItem/MenuItem';
 
 const MenuContainer = styled.div<{ show: boolean }>`
@@ -15,7 +14,7 @@ const MenuContainer = styled.div<{ show: boolean }>`
     bottom: 0;
     z-index: 1;
     opacity: 0;
-    position: absolute;
+    position: fixed;
     visibility: hidden;
     display: flex;
     flex-flow: column nowrap;
@@ -54,10 +53,10 @@ export const Menu: React.FunctionComponent<{ show: boolean; onClose: () => void 
     <MenuContainer show={show}>
         <CloseButton onClick={onClose} />
         <MenuContent>
-            <AboutMenuItem to="/about" image={vietnam1Image} text="About Me" />
-            <ResumeMenuItem to="/curriculumvitae" image={vietnam5Image} text="Currivulum Vitae" />
-            <BlogMenuItem to="/blog" image={spainImage} text="Blog" />
-            <HomeMenuItem to="/home" image={canadaImage} text="Home" />
+            <AboutMenuItem to="/about" image={vietnam1500Image} text="About Me" />
+            <ResumeMenuItem to="/curriculumvitae" image={vietnam5500Image} text="Currivulum Vitae" />
+            <BlogMenuItem to="/blog" image={spain500Image} text="Blog" />
+            <HomeMenuItem to="/home" image={canada500Image} text="Home" />
         </MenuContent>
     </MenuContainer>
 );

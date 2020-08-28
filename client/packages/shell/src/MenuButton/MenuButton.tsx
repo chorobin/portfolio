@@ -7,24 +7,26 @@ const ButtonContainer = styled.a`
 `;
 
 const ButtonImage = styled.img`
-    border-radius: 50%;
+    padding: 10px;
     border: none;
     text-align: center;
     text-decoration: none;
-    background-size: cover;
     width: 100px;
     height: 100px;
     fill: #2185d0;
-    box-shadow: 0px 0px 32px 0px black;
-    transition: 1s box-shadow;
+    transition: 2s transform;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(15px 5px 4px gray);
 
     :focus {
         outline: none;
     }
 
     :hover {
-        box-shadow: 0px 0px 64px 0px white;
         cursor: pointer;
+        animation-play-state: running;
+        transform: scale(1.2);
     }
 `;
 

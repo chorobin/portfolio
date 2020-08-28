@@ -17,10 +17,6 @@ const config: webpack.Configuration = {
                 test: /\.(png|svg|jpg|gif)$/,
                 loader: 'file-loader',
             },
-            {
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: ['file-loader'],
-            },
         ],
     },
     plugins: [

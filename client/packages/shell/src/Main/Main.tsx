@@ -1,14 +1,10 @@
 import * as React from 'react';
-import { MenuButton } from '../MenuButton/MenuButton';
 import styled, { css } from 'styled-components';
-import earthImage from './Earth.svg';
 import { Menu } from '../Menu/Menu';
-import { Description } from '../Description/Description';
 import { GithubMark } from '../GithubMark/GithubMark';
 
 const MainContainer = styled.div`
     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-    width: 100vw;
     height: 100vh;
     display: flex;
     position: absolute;
@@ -16,40 +12,70 @@ const MainContainer = styled.div`
     right: 0;
     top: 0;
     bottom: 0;
+    overflow-y: scroll;
+
+    animation-name: titleanimation;
+    animation-duration: 1s;
+
+    @keyframes titleanimation {
+        from {
+            overflow-y: hidden;
+        }
+        to {
+            overflow-y: hidden;
+        }
+    }
 
     &.fade-enter {
         opacity: 0;
         z-index: 1;
+        overflow-y: hidden;
     }
     &.fade-enter-active {
         opacity: 1;
         transition: opacity 2s;
         z-index: 1;
+        overflow-y: hidden;
     }
     &.fade-exit {
         opacity: 1;
         z-index: 0;
+        overflow: hidden;
+        overflow-y: hidden;
     }
     &.fade-exit-active {
         opacity: 0;
         transition: opacity 2s;
         z-index: 0;
+        overflow-y: hidden;
     }
 `;
 
-const BackgroundContainer = styled.div<{ backgroundImage: string }>`
+const BackgroundContainer = styled.div<{
+    backgroundImage: string;
+    smallBackgroundImage: string;
+}>`
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-repeat: no-repeat;
     ${(props) =>
         css`
-            background-image: url(${props.backgroundImage});
+            background-position: center center;
+            background-repeat: no-repeat;
+
+            background-attachment: fixed;
+            background-size: cover;
+
+            @media (min-width: 768px) {
+                background-image: url(${props.smallBackgroundImage});
+            }
+
+            @media (min-width: 1920px) {
+                background-image: url(${props.backgroundImage});
+            }
         `}
-    background-size: cover;
-    background-position: center;
     transition: 1s;
 `;
 
@@ -60,9 +86,17 @@ const ContentContainer = styled.div`
     flex-flow: column nowrap;
     width: 70%;
     margin: auto;
+
+    @media (min-width: 768px) {
+        width: 90%;
+    }
+
+    @media (min-width: 1920px) {
+        width: 70%;
+    }
 `;
 
-const MeContainer = styled.div`
+const MeContainer = styled.div<{ show: boolean }>`
     padding: 40px;
     backdrop-filter: blur(5px);
     display: flex;
@@ -82,18 +116,41 @@ const MeContainer = styled.div`
     border-bottom-right-radius: 0.285714rem;
     border-bottom-left-radius: 0.285714rem;
     border: 1px solid rgba(34, 36, 38, 0.15);
+    opacity: 0;
+    transition: visibility 0.2s, opacity 0.2s;
+    opacity: ${(props) => (props.show ? 1 : 0)};
+    visibility: ${(props) => (props.show ? 'visible' : 'hidden')};
+    height: ${(props) => (props.show ? 'auto' : 0)};
+    overflow: hidden;
+    animation-name: titleanimation;
+    animation-duration: 1s;
+    text-align: center;
+
+    @keyframes titleanimation {
+        from {
+            position: relative;
+            bottom: -100vh;
+        }
+        to {
+            position: relative;
+            bottom: 0px;
+        }
+    }
 `;
 
 export const Main: React.FunctionComponent<{
     showMenu: boolean;
     setMenuShown: (menuShown: boolean) => void;
     backgroundImage: string;
-}> = ({ showMenu, setMenuShown, backgroundImage, children }) => {
+    smallBackgroundImage: string;
+}> = ({ showMenu, setMenuShown, backgroundImage, smallBackgroundImage, children }) => {
     return (
         <MainContainer>
-            <ContentContainer>{!showMenu && <MeContainer>{children}</MeContainer>}</ContentContainer>
+            <ContentContainer>
+                <MeContainer show={!showMenu}>{children}</MeContainer>
+            </ContentContainer>
             <Menu show={showMenu} onClose={() => setMenuShown(false)} />
-            <BackgroundContainer backgroundImage={backgroundImage} />
+            <BackgroundContainer backgroundImage={backgroundImage} smallBackgroundImage={smallBackgroundImage} />
             <GithubMark />
         </MainContainer>
     );

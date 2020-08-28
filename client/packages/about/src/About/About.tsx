@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Main from 'shell/Main';
-import vietnam1Image from 'shell/Images/Vietnam1.jpg';
+import vietnam1920Image from 'shell/Images/Vietnam1-1920.jpg';
+import vietnam1024Image from 'shell/Images/Vietnam1-1024.jpg';
 import Title from 'shell/Title';
 import Description from 'shell/Description';
 import MenuButton from 'shell/MenuButton';
@@ -8,7 +9,12 @@ import MenuButton from 'shell/MenuButton';
 export const About: React.FunctionComponent = () => {
     const [menuShown, setMenuShown] = React.useState(false);
     return (
-        <Main backgroundImage={vietnam1Image} showMenu={menuShown} setMenuShown={setMenuShown}>
+        <Main
+            backgroundImage={vietnam1920Image}
+            smallBackgroundImage={vietnam1024Image}
+            showMenu={menuShown}
+            setMenuShown={setMenuShown}
+        >
             <Title>About me.</Title>
             <Description>My name is Christopher Horobin. I am from Leicestershire, United Kingdom.</Description>
             <Description>

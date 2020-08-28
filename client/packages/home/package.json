@@ -23,6 +23,7 @@
   "scripts": {
     "build-dev": "webpack --config=webpack.dev.ts",
     "build-serve": "webpack-dev-server --config=webpack.dev.ts",
+    "build-serve-prod": "webpack-dev-server --config=webpack.prod.ts",
     "lint": "eslint ./src/**/*.{js,ts,tsx}"
   },
   "bugs": {
@@ -58,9 +59,9 @@
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
     "prettier": "^2.0.5",
+    "svg-inline-loader": "^0.8.2",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7",
-    "webpack": "^5.0.0-beta.22",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9"

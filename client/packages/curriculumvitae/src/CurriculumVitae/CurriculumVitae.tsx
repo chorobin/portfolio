@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Main from 'shell/Main';
-import vietnam5Image from 'shell/Images/Vietnam5.jpg';
+import vietnam51920Image from 'shell/Images/Vietnam5-1920.jpg';
+import vietnam51024Image from 'shell/Images/Vietnam5-1024.jpg';
 import Title from 'shell/Title';
 import { SecondaryTitle } from '../SecondaryTitle/SecondaryTitle';
 import styled from 'styled-components';
@@ -11,22 +12,34 @@ import { TimelineSectionLocation } from '../TimelineSection/TimelineSectionLocat
 import MenuButton from 'shell/MenuButton';
 import educationImage from './Education.svg';
 import experienceImage from './Experience.svg';
+import { Table } from '../Table/Table';
+import { TableBody } from '../Table/TableBody';
+import { TableRow } from '../Table/TableRow';
+import { TableHeading } from '../Table/TableHeading';
+import { TableCell } from '../Table/TableCell';
+import { SubTimeline } from '../SubTimeline/SubTimeline';
 
 const Content = styled.div`
     font-size: 1.5rem;
     align-self: stretch;
+    text-align: left;
 `;
 
 export const CurriculumVitae: React.FunctionComponent = () => {
     const [menuShown, setMenuShown] = React.useState(false);
     return (
-        <Main backgroundImage={vietnam5Image} showMenu={menuShown} setMenuShown={setMenuShown}>
+        <Main
+            backgroundImage={vietnam51920Image}
+            smallBackgroundImage={vietnam51024Image}
+            showMenu={menuShown}
+            setMenuShown={setMenuShown}
+        >
             <Title>Curriculum Vitae</Title>
             <SecondaryTitle>EXPERIENCE</SecondaryTitle>
             <img src={experienceImage} height="70px" />
             <Content>
                 <Timeline>
-                    <TimelineSection>
+                    <TimelineSection animationDelay={1}>
                         December 2018-Present
                         <TimelineSectionTitle>Senior Developer</TimelineSectionTitle>
                         <TimelineSectionLocation>Access Group UK</TimelineSectionLocation>
@@ -53,7 +66,7 @@ export const CurriculumVitae: React.FunctionComponent = () => {
                             <li>Designing solutions for scaling web applications using load balancers.</li>
                         </ul>
                     </TimelineSection>
-                    <TimelineSection>
+                    <TimelineSection animationDelay={2}>
                         October 2017 - December 2018
                         <TimelineSectionTitle>Developer</TimelineSectionTitle>
                         <TimelineSectionLocation>Access Group UK</TimelineSectionLocation>
@@ -65,7 +78,7 @@ export const CurriculumVitae: React.FunctionComponent = () => {
                             <li>Aiding in the development of Restful Api's built in ASP.NET Core MVC.</li>
                         </ul>
                     </TimelineSection>
-                    <TimelineSection>
+                    <TimelineSection animationDelay={3}>
                         August 2015 - October 2017
                         <TimelineSectionTitle>Junior Application Developer</TimelineSectionTitle>
                         <TimelineSectionLocation>Access Group UK</TimelineSectionLocation>
@@ -90,7 +103,7 @@ export const CurriculumVitae: React.FunctionComponent = () => {
                             <li> Learning how to write efficient SQL Server queries.</li>
                         </ul>
                     </TimelineSection>
-                    <TimelineSection>
+                    <TimelineSection animationDelay={3}>
                         January 2015 - June 2015
                         <TimelineSectionTitle>Research Traffic Condition Forecasting</TimelineSectionTitle>
                         <TimelineSectionLocation>De Montfort University, Leicester</TimelineSectionLocation>
@@ -109,7 +122,7 @@ export const CurriculumVitae: React.FunctionComponent = () => {
                             </li>
                         </ul>
                     </TimelineSection>
-                    <TimelineSection>
+                    <TimelineSection animationDelay={3}>
                         June 2013 - August 2014
                         <TimelineSectionTitle>
                             Synthetic Environments and Collaborative Systems Internship
@@ -135,13 +148,115 @@ export const CurriculumVitae: React.FunctionComponent = () => {
             <img src={educationImage} height="70px" />
             <Content>
                 <Timeline>
-                    <TimelineSection>
+                    <TimelineSection animationDelay={3}>
                         Sept 2011 - July 2015
                         <TimelineSectionTitle>
                             Bachelor of Science (BSc Hons) Software Engineering with Industrial Placement First Class
                             Honours
                         </TimelineSectionTitle>
-                        <TimelineSectionLocation>De Montfort University</TimelineSectionLocation> 87% Average Leicester
+                        <TimelineSectionLocation>De Montfort University Leicester</TimelineSectionLocation> 87% Average
+                        <SubTimeline>
+                            <TimelineSection animationDelay={3}>
+                                Sept 2014 - July 2015
+                                <TimelineSectionTitle>Third year modules</TimelineSectionTitle>
+                                <Table>
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableHeading>Module</TableHeading>
+                                            <TableHeading>Grade %</TableHeading>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Telematics</TableCell>
+                                            <TableCell>83</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Rigorous Systems</TableCell>
+                                            <TableCell>91</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Mobile Robotics</TableCell>
+                                            <TableCell>84</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Systems Building: Methods and Management</TableCell>
+                                            <TableCell>82</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Computing Project</TableCell>
+                                            <TableCell>87</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Ethics and Professional Practice</TableCell>
+                                            <TableCell>55</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </TimelineSection>
+                            <TimelineSection animationDelay={3}>
+                                Sept 2012 - July 2013
+                                <TimelineSectionTitle>Second year modules</TimelineSectionTitle>
+                                <Table>
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableHeading>Module</TableHeading>
+                                            <TableHeading>Grade %</TableHeading>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Internet Software Development</TableCell>
+                                            <TableCell>82</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Object Orientated Software Design and Development</TableCell>
+                                            <TableCell>92</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Data Structures and Algorithms</TableCell>
+                                            <TableCell>90</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Database Design and Implementation </TableCell>
+                                            <TableCell> 89</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </TimelineSection>
+                            <TimelineSection animationDelay={3}>
+                                Sept 2011 - July 2012
+                                <TimelineSectionTitle>First year modules</TimelineSectionTitle>
+                                <Table>
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableHeading>Module</TableHeading>
+                                            <TableHeading>Grade %</TableHeading>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Programming in C</TableCell>
+                                            <TableCell>91</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Creative Client Computing</TableCell>
+                                            <TableCell>93</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Computer Systems</TableCell>
+                                            <TableCell>80</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>Computational Modelling</TableCell>
+                                            <TableCell>97</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </TimelineSection>
+                        </SubTimeline>
+                    </TimelineSection>
+                    <TimelineSection animationDelay={3}>
+                        Sept 2006 - July 2011
+                        <TimelineSectionTitle>Computing ADV, A2 Applied ICT Double</TimelineSectionTitle>
+                        <TimelineSectionLocation>
+                            Rawlins Community College Quorndon, Leicestershire
+                        </TimelineSectionLocation>
+                        Award B,B,B
                     </TimelineSection>
                 </Timeline>
             </Content>

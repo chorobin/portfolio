@@ -1,10 +1,29 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.div<{ animationDelay: string }>`
     position: relative;
     background-color: inherit;
     padding: 20px 40px;
+    animation-name: timeline-animation;
+    ${(props) =>
+        css`
+            animation-duration: ${props.animationDelay}s;
+        `}
+    z-index: 1;
+
+    @keyframes timeline-animation {
+        from {
+            opacity: 0;
+            position: relative;
+            bottom: -100vh;
+        }
+        to {
+            opacity: 1;
+            position: relative;
+            bottom: 0px;
+        }
+    }
 
     :after {
         content: '';
@@ -44,8 +63,12 @@ const Content = styled.div`
     color: rgba(0, 0, 0, 0.8);
 `;
 
-export const TimelineSection: React.FunctionComponent = ({ children }) => (
-    <Container>
+export const TimelineSection: React.FunctionComponent<{ className?: string; animationDelay: number }> = ({
+    className,
+    children,
+    animationDelay,
+}) => (
+    <Container animationDelay={animationDelay} className={className}>
         <Content>{children}</Content>
     </Container>
 );

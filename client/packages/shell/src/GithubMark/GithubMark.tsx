@@ -6,6 +6,7 @@ const ButtonContainer = styled.a`
     position: absolute;
     top: 32px;
     right: 32px;
+    z-index: 2;
 `;
 
 const ButtonImage = styled.img`

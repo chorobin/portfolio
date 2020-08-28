@@ -1,8 +1,8 @@
 import { merge } from 'webpack-merge';
+import common from './webpack.common';
 import dev from '../../webpack.dev';
-import ModuleFederationPlugin from 'webpack/lib/container/ModuleFederationPlugin';
 
-const config = merge(dev, {
+const config = merge(common, dev, {
     output: {
         publicPath: 'http://localhost:3003/',
     },
@@ -10,20 +10,6 @@ const config = merge(dev, {
         publicPath: 'http://localhost:3003/',
         port: 3003,
     },
-    plugins: [
-        new ModuleFederationPlugin({
-            name: 'curriculumvitae',
-            library: { type: 'var', name: 'curriculumvitae' },
-            filename: 'remoteEntry.js',
-            remotes: {
-                shell: 'shell',
-            },
-            exposes: {
-                './CurriculumVitae': './src/CurriculumVitae/CurriculumVitae',
-            },
-            shared: require('./package.json').dependencies,
-        }) as any,
-    ],
 });
 
 export default config;
