@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import githubMarkImage from './Github-Mark-64px.png';
+import githubMarkImage from './GitHub-Mark-64px.png';
 
 const ButtonContainer = styled.a`
     position: absolute;
