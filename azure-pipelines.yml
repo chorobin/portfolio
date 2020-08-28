@@ -10,7 +10,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
- - task: NodeTool@0
  - script: yarn install
    displayName: 'Yarn install'
    workingDirectory: client
