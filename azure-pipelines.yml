@@ -13,8 +13,8 @@ steps:
  - task: NodeTool@0
  - script: yarn install
    displayName: 'Yarn install'
-   workingDirectory: ./client
+   workingDirectory: client
 
  - script: lerna run build-pord --scope @portfolio/shell
    displayName: 'Build Shell'
-   workingDirectory: ./client
+   workingDirectory: client
