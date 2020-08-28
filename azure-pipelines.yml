@@ -10,7 +10,6 @@ trigger:
  paths:
   include:
     - client/packages/shell
-    
 
 pool:
   vmImage: 'ubuntu-latest'
