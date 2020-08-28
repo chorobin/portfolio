@@ -24,6 +24,7 @@
     "build-dev": "webpack --config=webpack.dev.ts",
     "build-serve": "webpack-dev-server --config=webpack.dev.ts",
     "build-serve-prod": "webpack-dev-server --config=webpack.prod.ts",
+    "build-prod": "webpack --config=webpack.prod.ts",
     "lint": "eslint ./src/**/*.{js,ts,tsx}"
   },
   "bugs": {
