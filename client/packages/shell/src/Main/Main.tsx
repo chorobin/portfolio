@@ -139,8 +139,8 @@ const MeContainer = styled.div<{ show: boolean }>`
 `;
 
 export const Main: React.FunctionComponent<{
-    showMenu: boolean;
-    setMenuShown: (menuShown: boolean) => void;
+    showMenu?: boolean;
+    setMenuShown?: (menuShown: boolean) => void;
     backgroundImage: string;
     smallBackgroundImage: string;
 }> = ({ showMenu, setMenuShown, backgroundImage, smallBackgroundImage, children }) => {
@@ -149,7 +149,7 @@ export const Main: React.FunctionComponent<{
             <ContentContainer>
                 <MeContainer show={!showMenu}>{children}</MeContainer>
             </ContentContainer>
-            <Menu show={showMenu} onClose={() => setMenuShown(false)} />
+            {setMenuShown && <Menu show={showMenu} onClose={() => setMenuShown(false)} />}
             <BackgroundContainer backgroundImage={backgroundImage} smallBackgroundImage={smallBackgroundImage} />
             <GithubMark />
         </MainContainer>

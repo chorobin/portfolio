@@ -109,16 +109,16 @@ export const CurriculumVitae: React.FunctionComponent = () => {
                         <TimelineSectionLocation>De Montfort University, Leicester</TimelineSectionLocation>
                         <ul>
                             <li>
-                                Writing software to support in managing large trac data sets, using the programming
+                                Writing software to support in managing large traffic data sets, using the programming
                                 languages Java and Scala.
                             </li>
                             <li>
-                                Developing visualisation tools to identify relationships between trac data and building
-                                energy con- sumption.
+                                Developing visualisation tools to identify relationships between traffic data and building
+                                energy consumption.
                             </li>
                             <li>
-                                Aggregating large trac and energy consumption data sets to visualise using
-                                multi-dimensional visu- alisation techniques.
+                                Aggregating large traffic and energy consumption data sets to visualise using
+                                multi-dimensional visusalisation techniques.
                             </li>
                         </ul>
                     </TimelineSection>
